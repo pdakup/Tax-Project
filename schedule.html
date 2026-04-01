@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment - Pearl Tax File</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Pearl Tax File</h1>
+      <p>Schedule your tax support appointment</p>
+    </div>
+    <nav aria-label="Main navigation">
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prepare.html">Prepare Taxes</a></li>
+        <li><a href="specialists.html">Specialists</a></li>
+        <li><a href="schedule.html">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Appointment Request</h2>
+      <p>Complete the form below so our team can confirm your appointment and prepare your tax session.</p>
+
+      <form class="appointment-form">
+        <fieldset>
+          <legend>Contact information</legend>
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
+
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Appointment details</legend>
+          <label for="serviceType">Service type</label>
+          <select id="serviceType" name="serviceType" required>
+            <option value="">Choose a service</option>
+            <option value="filing">Individual tax filing</option>
+            <option value="review">Return review</option>
+            <option value="audit">Audit support</option>
+          </select>
+
+          <label for="preferredDate">Preferred date</label>
+          <input type="date" id="preferredDate" name="preferredDate" required />
+
+          <label for="notes">Additional notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your tax situation"></textarea>
+
+          <label for="documents">Upload tax documents</label>
+          <input type="file" id="documents" name="documents" accept=".pdf,.jpg,.jpeg,.png" multiple aria-describedby="uploadHelp" />
+          <small id="uploadHelp">Upload W-2, 1099, or other supporting tax documents.</small>
+        </fieldset>
+
+        <button type="submit">Request appointment</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
