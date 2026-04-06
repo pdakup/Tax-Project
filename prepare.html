@@ -18,6 +18,7 @@
         <li><a href="prepare.html">Prepare Taxes</a></li>
         <li><a href="specialists.html">Specialists</a></li>
         <li><a href="schedule.html">Book Appointment</a></li>
+        <li><a href="misconceptions.html">Tax Tips</a></li>
       </ul>
     </nav>
   </header>
@@ -29,6 +30,14 @@
 
       <form id="taxPrepForm" class="tax-prep-form" action="form-preview.html" method="get">
         <fieldset>
+          <legend>Are you a U.S. resident or nonresident for tax purposes?</legend>
+          <div class="form-options">
+            <label><input type="radio" name="residency" value="Resident" checked /> U.S. Resident (file Form 1040)</label>
+            <label><input type="radio" name="residency" value="Nonresident" /> Nonresident Alien (file Form 1040-NR)</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
           <legend>Filer type</legend>
           <div class="form-options">
             <label><input type="radio" name="filerType" value="Single" checked /> Single</label>
@@ -36,6 +45,34 @@
             <label><input type="radio" name="filerType" value="Married filing separately" /> Married filing separately</label>
             <label><input type="radio" name="filerType" value="Head of household" /> Head of household</label>
             <label><input type="radio" name="filerType" value="Qualifying widow(er)" /> Qualifying widow(er)</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Nonresident Filer Details (1040-NR)</legend>
+          <div class="tax-grid">
+            <label for="taxResidenceCountry">Country of tax residence</label>
+            <input type="text" id="taxResidenceCountry" name="taxResidenceCountry" placeholder="e.g., Canada" />
+
+            <label for="visaType">Visa type</label>
+            <select id="visaType" name="visaType">
+              <option value="">Select visa type</option>
+              <option value="F-1">F-1</option>
+              <option value="J-1">J-1</option>
+              <option value="H-1B">H-1B</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <label for="taxTreatyCountry">Tax treaty country</label>
+            <input type="text" id="taxTreatyCountry" name="taxTreatyCountry" placeholder="e.g., India" />
+            <p class="hint">Enter your home country if it has a tax treaty with the U.S.</p>
+
+            <label for="effectivelyConnectedIncome">Effectively connected income</label>
+            <input type="number" id="effectivelyConnectedIncome" name="effectivelyConnectedIncome" min="0" step="0.01" placeholder="0.00" />
+
+            <label for="scholarshipIncome">Scholarship or fellowship income</label>
+            <input type="number" id="scholarshipIncome" name="scholarshipIncome" min="0" step="0.01" placeholder="0.00" />
+            <p class="hint">Scholarships covering tuition are generally tax-free, but amounts covering room and board may be taxable.</p>
           </div>
         </fieldset>
 
@@ -116,9 +153,11 @@
 
             <label for="deductions">Total deductions</label>
             <input type="number" id="deductions" name="deductions" min="0" step="0.01" placeholder="0.00" />
+            <p class="hint">F-1 and J-1 visa holders do not qualify for the Earned Income Credit.</p>
 
             <label for="taxCredits">Tax credits</label>
             <input type="number" id="taxCredits" name="taxCredits" min="0" step="0.01" placeholder="0.00" />
+            <p class="hint">Nonresident aliens cannot claim the American Opportunity Credit or Child Tax Credit.</p>
           </div>
           <p class="hint">Use standard deduction or enter itemized deductions if you have them.</p>
         </fieldset>
