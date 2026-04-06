@@ -29,8 +29,23 @@
       <p>Search our team by name or department, then click a link to schedule an appointment directly.</p>
 
       <div class="search-bar" role="search">
-        <label for="specialistSearch">Search specialist</label>
-        <input type="text" id="specialistSearch" placeholder="Search by name or department" />
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; width:100%;">
+          <div style="flex:1 1 220px; min-width:220px;">
+            <label for="specialistSearch">Search by name</label>
+            <input type="text" id="specialistSearch" placeholder="e.g. Maya Chen" />
+          </div>
+          <div style="flex:1 1 220px; min-width:220px;">
+            <label for="departmentFilter">Filter by department</label>
+            <select id="departmentFilter" name="departmentFilter">
+              <option>All departments</option>
+              <option>Individual Tax Filing</option>
+              <option>Audit Support</option>
+              <option>Tax Planning</option>
+              <option>Self-Employment Taxes</option>
+              <option>Retirement & Investments</option>
+            </select>
+          </div>
+        </div>
         <button id="searchButton" type="button">Search</button>
       </div>
 

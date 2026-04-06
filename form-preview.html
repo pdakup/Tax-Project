@@ -25,28 +25,88 @@
 
   <main>
     <section>
-      <h2>IRS Form 1040 Preview</h2>
-      <p>This preview page demonstrates how your tax data will be summarized for IRS filing. Since this version uses only HTML and CSS, the preview is a template you can use to confirm your entry.</p>
+      <h2>Your 2025 Tax Return Summary</h2>
+      <p>Review the summary of tax amounts from your return before moving on to the official IRS forms.</p>
 
       <article class="resource-card">
-        <h3>Form 1040 summary</h3>
-        <dl>
-          <dt>Filer type</dt>
-          <dd>Single</dd>
-          <dt>Selected documents</dt>
-          <dd>W-2, 1099-INT</dd>
-          <dt>Gross income</dt>
-          <dd>$0.00</dd>
-          <dt>Taxable income</dt>
-          <dd>$0.00</dd>
-          <dt>Federal tax withheld</dt>
-          <dd>$0.00</dd>
-          <dt>Estimated refund / amount due</dt>
-          <dd>$0.00</dd>
-        </dl>
+        <h3>Tax return summary</h3>
+        <div class="table-wrapper">
+          <table>
+            <caption>2025 tax return summary</caption>
+            <thead>
+              <tr>
+                <th scope="col">Form Line</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Line 1a</td>
+                <td>W-2 Wages</td>
+                <td>$6,834.97</td>
+              </tr>
+              <tr>
+                <td>Line 3b</td>
+                <td>Ordinary Dividends</td>
+                <td>$0.43</td>
+              </tr>
+              <tr>
+                <td>Line 7a</td>
+                <td>Capital Gain (PLTR sale)</td>
+                <td>$0.06</td>
+              </tr>
+              <tr>
+                <td>Line 9</td>
+                <td>Total Effectively Connected Income</td>
+                <td>$6,835.46</td>
+              </tr>
+              <tr>
+                <td>Line 15</td>
+                <td>Taxable Income</td>
+                <td>$6,835.46</td>
+              </tr>
+              <tr>
+                <td>Line 24</td>
+                <td>Total Tax</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Line 25a</td>
+                <td>Federal Tax Withheld (W-2)</td>
+                <td>$956.91</td>
+              </tr>
+              <tr>
+                <td>Line 33</td>
+                <td>Total Payments</td>
+                <td>$956.91</td>
+              </tr>
+              <tr class="summary-success-row">
+                <td>Line 34</td>
+                <td>Estimated Refund</td>
+                <td>$—</td>
+              </tr>
+              <tr class="summary-danger-row">
+                <td>Line 37</td>
+                <td>Amount You Owe</td>
+                <td>$—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </article>
 
-      <p>If you want to file these values, use the same fields on the Prepare Taxes page and then review this preview before submitting to a specialist or the IRS.</p>
+      <section class="resource-card">
+        <h3>What to Do Next</h3>
+        <ol>
+          <li>Review your entries on the <a href="prepare.html">Prepare Taxes</a> page.</li>
+          <li><a href="https://www.irs.gov/forms-pubs/about-form-1040-nr" target="_blank" rel="noopener noreferrer">Download Form 1040-NR from IRS.gov</a>.</li>
+          <li>Transfer your amounts to the official IRS form.</li>
+          <li>Attach your W-2 and any 1099 forms.</li>
+          <li>Sign and mail or e-file by the April 15 deadline <span class="hint">Nonresident aliens who have no W-2 income have until June 15.</span></li>
+          <li>If you need help, <a href="schedule.html">book an appointment with one of our specialists</a>.</li>
+        </ol>
+      </section>
     </section>
   </main>
 </body>

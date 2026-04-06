@@ -39,9 +39,21 @@
 
           <label for="phone">Phone number</label>
           <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
+
+          <label for="visaResidency">Your visa or residency status</label>
+          <select id="visaResidency" name="visaResidency" required>
+            <option value="">Select status</option>
+            <option value="F-1 Student Visa">F-1 Student Visa</option>
+            <option value="J-1 Exchange Visitor">J-1 Exchange Visitor</option>
+            <option value="H-1B Work Visa">H-1B Work Visa</option>
+            <option value="Permanent Resident (Green Card)">Permanent Resident (Green Card)</option>
+            <option value="U.S. Citizen">U.S. Citizen</option>
+            <option value="Other">Other</option>
+          </select>
+          <p class="hint">This helps us assign the right specialist for your appointment.</p>
         </fieldset>
 
-        <fieldset>
+        <fieldset required>
           <legend>Appointment details</legend>
           <label for="serviceType">Service type</label>
           <select id="serviceType" name="serviceType" required>
@@ -49,10 +61,36 @@
             <option value="filing">Individual tax filing</option>
             <option value="review">Return review</option>
             <option value="audit">Audit support</option>
+            <option value="1040nr">1040-NR Filing Help (International Students)</option>
+            <option value="taxTreaty">Tax Treaty Review</option>
+            <option value="itin">ITIN Application Assistance</option>
+            <option value="scholarship">Scholarship Income Review</option>
+            <option value="auditSupport">Audit Support</option>
+          </select>
+
+          <label for="preferredDepartment">Preferred specialist department</label>
+          <select id="preferredDepartment" name="preferredDepartment" required>
+            <option value="">Any available specialist</option>
+            <option value="Individual Tax Filing">Individual Tax Filing</option>
+            <option value="Audit Support">Audit Support</option>
+            <option value="Tax Planning">Tax Planning</option>
+            <option value="Self-Employment Taxes">Self-Employment Taxes</option>
+            <option value="Retirement & Investments">Retirement & Investments</option>
+          </select>
+
+          <label for="referralSource">How did you hear about us?</label>
+          <select id="referralSource" name="referralSource">
+            <option value="">Select an option</option>
+            <option value="Stetson University">Stetson University</option>
+            <option value="Friend or classmate">Friend or classmate</option>
+            <option value="Google search">Google search</option>
+            <option value="Social media">Social media</option>
+            <option value="International student office">International student office</option>
+            <option value="Other">Other</option>
           </select>
 
           <label for="preferredDate">Preferred date</label>
-          <input type="date" id="preferredDate" name="preferredDate" required />
+          <input type="date" id="preferredDate" name="preferredDate" required min="2026-04-06" />
 
           <label for="notes">Additional notes</label>
           <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your tax situation"></textarea>
