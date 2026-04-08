@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pearl Tax File</title>
+  <title>FileWithPearl</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <h1>Pearl Tax File</h1>
+      <h1>FileWithPearl</h1>
       <p>Your U.S. individual tax filing assistant</p>
     </div>
     <nav aria-label="Main navigation">
@@ -24,60 +24,97 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h2>File your taxes with confidence</h2>
-      <p>Complete your return, upload documents, and connect with a qualified tax specialist for personal help.</p>
-      <a class="primary-button" href="prepare.html">Start preparing taxes</a>
-    </section>
+    <div class="announcement-bar">
+      <span>🗓️</span>
+      <p>The 2025 tax deadline is <strong>April 15, 2026</strong>. 
+      Nonresident aliens with no W-2 income have until 
+      <strong>June 15, 2026</strong>.
+      <a href="schedule.html">Make appointment →</a></p>
+    </div>
+
+    <h2 class="section-heading">How do you want to file?</h2>
 
     <section class="features">
-      <article>
-        <h3>Upload documents</h3>
-        <p>Upload W-2s, 1099s, and other tax files to accelerate your return preparation.</p>
+      <article class="filing-card">
+        <h3>File on your own<br>with confidence</h3>
+        <p>Step-by-step guidance for simple returns — 
+           W-2, 1099, and investment income.</p>
+        <ul>
+          <li>Guided fields with hints at every step</li>
+          <li>Supports Form 1040 and Form 1040-NR</li>
+          <li>International student rules explained</li>
+        </ul>
+        <a href="prepare.html" class="card-button">
+          Prepare my taxes
+        </a>
       </article>
-      <article>
-        <h3>Review and file</h3>
-        <p>Fill in fields and review your entries with a step-by-step workflow designed for individuals.</p>
+
+      <article class="filing-card filing-card--featured">
+        <h3>File with help<br>by your side</h3>
+        <p>Get matched with a tax specialist who 
+           understands your situation.</p>
+        <ul>
+          <li>1040-NR filing for nonresident aliens</li>
+          <li>Tax treaty review and ITIN assistance</li>
+          <li>Scholarship and fellowship income help</li>
+        </ul>
+        <a href="schedule.html" class="card-button">
+          Book appointment
+        </a>
       </article>
-      <article>
-        <h3>Find expert help</h3>
-        <p>Search our specialists and book appointments for audit support, tax planning, or filing help.</p>
+
+      <article class="filing-card">
+        <h3>Find a specialist<br>near you</h3>
+        <p>Browse our team by department and 
+           schedule directly.</p>
+        <ul>
+          <li>Audit support and tax planning</li>
+          <li>Self-employment and investment taxes</li>
+          <li>Retirement and distribution guidance</li>
+        </ul>
+        <a href="specialists.html" class="card-button">
+          Find a specialist
+        </a>
       </article>
     </section>
 
     <section class="audience">
-      <h2>Who should use Pearl Tax File?</h2>
-      <p>Pearl Tax File is designed for U.S. residents filing their annual tax returns, as well as international students on F-1 or J-1 visas who need to file Form 1040-NR for nonresident aliens.</p>
+      <h2 class="section-heading-light">Who should use FileWithPearl?</h2>
+      <div class="audience-card">
+        <p>FileWithPearl is designed for U.S. residents filing their annual tax returns, as well as international students on F-1 or J-1 visas who need to file Form 1040-NR for nonresident aliens.</p>
+      </div>
     </section>
 
-    <section class="resource-card">
-      <h2>Helpful tax resource</h2>
-      <p>Visit the IRS site for the latest forms and filing deadlines.</p>
-      <a href="https://www.irs.gov/filing" target="_blank" rel="noopener noreferrer">
-        <img src="https://via.placeholder.com/600x300?text=IRS+Help+Center" alt="Visit the IRS filing help center" />
-      </a>
-    </section>
+    <div class="resource-panel">
+      <section class="resource-card">
+        <h2>Helpful tax resource</h2>
+        <p>Visit the IRS site for the latest forms and filing deadlines.</p>
+        <a href="https://www.irs.gov/filing" target="_blank" rel="noopener noreferrer">
+          <img class="photo-card" src="https://images.unsplash.com/photo-1581090700227-7bbc233f4b58?auto=format&fit=crop&w=900&q=80" alt="Close-up of tax forms and calculator on a desk" />
+        </a>
+      </section>
 
-    <section class="resource-card">
-      <h2>IRS resources for international taxpayers</h2>
-      <p>Find information and guidance for international taxpayers living in the U.S.</p>
-      <a href="https://www.irs.gov/individuals/international-taxpayers" target="_blank" rel="noopener noreferrer">
-        <img src="https://via.placeholder.com/600x300?text=IRS+Resources+for+International+Taxpayers" alt="IRS resources for international taxpayers" />
-      </a>
-    </section>
+      <section class="resource-card">
+        <h2>IRS resources for international taxpayers</h2>
+        <p>Find information and guidance for international taxpayers living in the U.S.</p>
+        <a href="https://www.irs.gov/individuals/international-taxpayers" target="_blank" rel="noopener noreferrer">
+          <img class="photo-card" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="International tax planning documents" />
+        </a>
+      </section>
 
-    <section class="resource-card">
-      <h2>Learn about IRS Form 1040-NR</h2>
-      <p>Understand Form 1040-NR for nonresident aliens and how to file it.</p>
-      <a href="https://www.irs.gov/forms-pubs/about-form-1040-nr" target="_blank" rel="noopener noreferrer">
-        <img src="https://via.placeholder.com/600x300?text=About+Form+1040-NR" alt="Learn about IRS Form 1040-NR for nonresident aliens" />
-      </a>
-    </section>
+      <section class="resource-card">
+        <h2>Learn about IRS Form 1040-NR</h2>
+        <p>Understand Form 1040-NR for nonresident aliens and how to file it.</p>
+        <a href="https://www.irs.gov/forms-pubs/about-form-1040-nr" target="_blank" rel="noopener noreferrer">
+          <img class="photo-card" src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=900&q=80" alt="IRS Form 1040-NR paperwork" />
+        </a>
+      </section>
+    </div>
 
   </main>
 
   <footer>
-    <p>© 2026 Pearl Dakup</p>
+    <p>© 2026 FileWithPearl · Pearl Dakup</p>
   </footer>
 </body>
 </html>
