@@ -24,246 +24,356 @@
   </header>
 
   <main>
+    <div class="prepare-welcome">
+      <span class="prepare-icon">👋</span>
+      <div>
+        <h2>Let's file your taxes together.</h2>
+        <p>Take it one section at a time. 
+           We'll explain everything as you go 
+           no tax degree required.</p>
+      </div>
+    </div>
+
+    <!-- Hidden radio buttons for step selection -->
+    <input type="radio" name="step" id="step1" value="1" checked style="display: none;">
+    <input type="radio" name="step" id="step2" value="2" style="display: none;">
+    <input type="radio" name="step" id="step3" value="3" style="display: none;">
+    <input type="radio" name="step" id="step4" value="4" style="display: none;">
+    <input type="radio" name="step" id="step5" value="5" style="display: none;">
+    <input type="radio" name="step" id="step6" value="6" style="display: none;">
+
+    <div class="progress-bar">
+      <label for="step1" class="progress-step">
+        <span>1</span> Filer Type
+      </label>
+      <label for="step2" class="progress-step">
+        <span>2</span> Personal Info
+      </label>
+      <label for="step3" class="progress-step">
+        <span>3</span> Income
+      </label>
+      <label for="step4" class="progress-step">
+        <span>4</span> Deductions
+      </label>
+      <label for="step5" class="progress-step">
+        <span>5</span> Credits
+      </label>
+      <label for="step6" class="progress-step">
+        <span>6</span> Payments
+      </label>
+    </div>
+
     <section>
       <h2>Self-service tax preparation</h2>
       <p>Follow each step to enter your tax information like a guided return.</p>
 
-      <form id="taxPrepForm" class="tax-prep-form" action="form-preview.html" method="get">
+      <form class="tax-prep-form" action="form-preview.html" method="get">
         <p class="required-note">* Required fields</p>
-        <fieldset>
-          <legend>Are you a U.S. resident or nonresident for tax purposes?</legend>
-          <div class="form-options">
-            <label><input type="radio" name="residency" value="Resident" checked /> U.S. Resident – File Form 1040</label>
-            <label><input type="radio" name="residency" value="Nonresident" /> Nonresident Alien – File Form 1040-NR</label>
-          </div>
-        </fieldset>
+        
+        <!-- STEP 1: FILER TYPE -->
+        <div class="form-step" data-step="1">
+          <fieldset>
+            <legend>Are you a U.S. resident or nonresident for tax purposes?</legend>
+            <div class="form-options">
+              <label><input type="radio" name="residency" value="Resident" checked /> U.S. Resident – File Form 1040</label>
+              <label><input type="radio" name="residency" value="Nonresident" /> Nonresident Alien – File Form 1040-NR</label>
+            </div>
+          </fieldset>
+        </div>
 
-        <fieldset required>
-          <legend class="required-label">Personal Information</legend>
-          <div class="tax-grid">
-            <label for="firstName" class="required-label">First name</label>
-            <input type="text" id="firstName" name="firstName" placeholder="First name" required />
+        <!-- STEP 2: PERSONAL INFO -->
+        <div class="form-step" data-step="2">
+          <fieldset required>
+            <legend class="required-label">Personal Information</legend>
+            <div class="tax-grid">
+              <label for="firstName" class="required-label">First name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="First name" required />
 
-            <label for="middleInitial">Middle initial</label>
-            <input type="text" id="middleInitial" name="middleInitial" placeholder="M" maxlength="1" />
+              <label for="middleInitial">Middle initial</label>
+              <input type="text" id="middleInitial" name="middleInitial" placeholder="M" maxlength="1" />
 
-            <label for="lastName" class="required-label">Last name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Last name" required />
+              <label for="lastName" class="required-label">Last name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Last name" required />
 
-            <label for="ssnItin" class="required-label">Social security number or ITIN</label>
-            <input type="text" id="ssnItin" name="ssnItin" placeholder="111-22-3333" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" inputmode="numeric" required />
+              <label for="ssnItin" class="required-label">Social security number or ITIN</label>
+              <input type="text" id="ssnItin" name="ssnItin" placeholder="111-22-3333" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" inputmode="numeric" required />
 
-            <label for="address">Home address</label>
-            <input type="text" id="address" name="address" placeholder="Street address" required />
+              <label for="address">Home address</label>
+              <input type="text" id="address" name="address" placeholder="Street address" required />
 
-            <label for="city" class="required-label">City</label>
-            <input type="text" id="city" name="city" placeholder="City" required />
+              <label for="city" class="required-label">City</label>
+              <input type="text" id="city" name="city" placeholder="City" required />
 
-            <label for="state" class="required-label">State</label>
-            <select id="state" name="state" required>
-              <option value="">Not applicable / Foreign address</option>
-              <option value="Alabama">Alabama</option>
-              <option value="Alaska">Alaska</option>
-              <option value="Arizona">Arizona</option>
-              <option value="Arkansas">Arkansas</option>
-              <option value="California">California</option>
-              <option value="Colorado">Colorado</option>
-              <option value="Connecticut">Connecticut</option>
-              <option value="Delaware">Delaware</option>
-              <option value="Florida">Florida</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Hawaii">Hawaii</option>
-              <option value="Idaho">Idaho</option>
-              <option value="Illinois">Illinois</option>
-              <option value="Indiana">Indiana</option>
-              <option value="Iowa">Iowa</option>
-              <option value="Kansas">Kansas</option>
-              <option value="Kentucky">Kentucky</option>
-              <option value="Louisiana">Louisiana</option>
-              <option value="Maine">Maine</option>
-              <option value="Maryland">Maryland</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="Michigan">Michigan</option>
-              <option value="Minnesota">Minnesota</option>
-              <option value="Mississippi">Mississippi</option>
-              <option value="Missouri">Missouri</option>
-              <option value="Montana">Montana</option>
-              <option value="Nebraska">Nebraska</option>
-              <option value="Nevada">Nevada</option>
-              <option value="New Hampshire">New Hampshire</option>
-              <option value="New Jersey">New Jersey</option>
-              <option value="New Mexico">New Mexico</option>
-              <option value="New York">New York</option>
-              <option value="North Carolina">North Carolina</option>
-              <option value="North Dakota">North Dakota</option>
-              <option value="Ohio">Ohio</option>
-              <option value="Oklahoma">Oklahoma</option>
-              <option value="Oregon">Oregon</option>
-              <option value="Pennsylvania">Pennsylvania</option>
-              <option value="Rhode Island">Rhode Island</option>
-              <option value="South Carolina">South Carolina</option>
-              <option value="South Dakota">South Dakota</option>
-              <option value="Tennessee">Tennessee</option>
-              <option value="Texas">Texas</option>
-              <option value="Utah">Utah</option>
-              <option value="Vermont">Vermont</option>
-              <option value="Virginia">Virginia</option>
-              <option value="Washington">Washington</option>
-              <option value="West Virginia">West Virginia</option>
-              <option value="Wisconsin">Wisconsin</option>
-              <option value="Wyoming">Wyoming</option>
+              <label for="state" class="required-label">State</label>
+              <select id="state" name="state" required>
+                <option value="">Not applicable / Foreign address</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+              </select>
+
+              <label for="zip">ZIP</label>
+              <input type="text" id="zip" name="zip" placeholder="12345" pattern="[0-9]{5}" inputmode="numeric" required />
+
+              <label for="country" class="required-label">Country</label>
+              <select id="country" name="country" required>
+                <option value="">Select a country (if applicable)</option>
+                <option value="United States">United States</option>
+                <option value="China">China</option>
+                <option value="India">India</option>
+                <option value="South Korea">South Korea</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Jamaica">Jamaica</option>
+                <option value="Canada">Canada</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Brazil">Brazil</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Japan">Japan</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Other (please specify)">Other (please specify)</option>
+              </select>
+              <p class="hint">Select your home country. This helps determine if a U.S. tax treaty applies to you.</p>
+
+              <label for="visaType" class="required-label">Visa Type</label>
+              <select id="visaType" name="visaType" required>
+                <option value="">Select visa type</option>
+                <option value="F-1">F-1 (Student)</option>
+                <option value="J-1">J-1 (Exchange Visitor)</option>
+                <option value="H-1B">H-1B (Specialty Occupation)</option>
+                <option value="H-4">H-4 (Dependent of H-1B)</option>
+                <option value="O-1">O-1 (Extraordinary Ability)</option>
+                <option value="L-1">L-1 (Intracompany Transfer)</option>
+                <option value="TN">TN (NAFTA/USMCA)</option>
+                <option value="Green Card / Permanent Resident">Green Card / Permanent Resident</option>
+                <option value="U.S. Citizen">U.S. Citizen</option>
+                <option value="Other">Other</option>
+              </select>
+              <p class="hint">Your visa type determines which tax form you file and which credits you qualify for.</p>
+              <details class="field-help">
+                <summary>Why does my visa type matter for taxes?</summary>
+                <p>Your visa type determines which tax form you 
+                   file. F-1 and J-1 students are usually 
+                   nonresident aliens and must file Form 1040-NR, 
+                   not the regular Form 1040. Filing the wrong 
+                   form is one of the most common mistakes 
+                   international students make.</p>
+              </details>
+            </div>
+            <div class="form-options">
+              <label><input type="radio" name="filingStatus" value="Single" checked /> Single</label>
+              <label><input type="radio" name="filingStatus" value="Married filing separately" /> Married filing separately</label>
+              <label><input type="radio" name="filingStatus" value="Qualifying surviving spouse" /> Qualifying surviving spouse</label>
+              <label><input type="radio" name="filingStatus" value="Estate or Trust" /> Estate or Trust</label>
+            </div>
+            <p class="hint">Nonresident aliens cannot file as Head of Household or Married Filing Jointly unless specific treaty conditions apply.</p>
+          </fieldset>
+        </div>
+
+        <!-- STEP 3: INCOME -->
+        <div class="form-step" data-step="3">
+          <fieldset>
+            <legend>Income Effectively Connected with U.S. Trade or Business</legend>
+            <div class="tax-grid">
+              <label for="line1a" class="required-label">Line 1a: Total wages from Form W-2, box 1</label>
+              <input type="number" id="line1a" name="line1a" min="0" step="0.01" placeholder="0.00" required />
+
+              <label for="line1k">Line 1k: Income exempt by tax treaty – enter 0 if none</label>
+              <input type="number" id="line1k" name="line1k" min="0" step="0.01" placeholder="0.00" />
+              <p class="hint">F-1 and J-1 students from certain countries may qualify for a treaty exemption. Check IRS Publication 901.</p>
+              <details class="field-help">
+                <summary>What is a tax treaty exemption?</summary>
+                <p>The U.S. has tax treaties with many countries 
+                   that allow certain income to be taxed at a 
+                   reduced rate or not at all. F-1 and J-1 students 
+                   from countries like China, India, and South Korea 
+                   may qualify. Check IRS Publication 901 to see 
+                   if your country has a treaty with the U.S.</p>
+              </details>
+
+              <label for="line2b">Line 2b: Taxable interest from 1099-INT</label>
+              <input type="number" id="line2b" name="line2b" min="0" step="0.01" placeholder="0.00" />
+
+              <label for="line3a">Line 3a: Qualified dividends from 1099-DIV</label>
+              <input type="number" id="line3a" name="line3a" min="0" step="0.01" placeholder="0.00" />
+
+              <label for="line3b">Line 3b: Ordinary dividends from 1099-DIV</label>
+              <input type="number" id="line3b" name="line3b" min="0" step="0.01" placeholder="0.00" />
+
+              <label for="line7a">Line 7a: Capital gain or loss from 1099-B</label>
+              <input type="number" id="line7a" name="line7a" step="0.01" placeholder="0.00" />
+              <p class="hint">Enter gain or loss from stock sales. Your 1099-B shows proceeds and cost basis.</p>
+              <details class="field-help">
+                <summary>Where do I find this on my 1099-B?</summary>
+                <p>Your 1099-B from your broker shows each stock 
+                   sale. Find the "Realized Gain/Loss" column. 
+                   Enter a positive number for a gain and a 
+                   negative number for a loss. If you sold 
+                   Palantir (PLTR) shares, that gain goes here.</p>
+              </details>
+
+              <label for="line8">Line 8: Other income</label>
+              <input type="number" id="line8" name="line8" min="0" step="0.01" placeholder="0.00" />
+            </div>
+            <div class="read-only-field">
+              <span>Line 9 – Total Effectively Connected Income</span>
+              <span>$0.00</span>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- STEP 4: DEDUCTIONS -->
+        <div class="form-step" data-step="4">
+          <fieldset>
+            <legend>Deductions</legend>
+            <div class="warning-box">
+              Important: Nonresident aliens generally CANNOT claim the standard deduction. You must itemize deductions on Schedule A (Form 1040-NR). Exception: Students from India may claim the standard deduction under the U.S.-India tax treaty.
+            </div>
+            <div class="tax-grid">
+              <label for="itemizedDeductions">Total itemized deductions</label>
+              <input type="number" id="itemizedDeductions" name="itemizedDeductions" min="0" step="0.01" placeholder="0.00" />
+
+              <label for="qbiDeduction">Qualified business income deduction</label>
+              <input type="number" id="qbiDeduction" name="qbiDeduction" min="0" step="0.01" placeholder="0.00" />
+            </div>
+            <div class="read-only-field">
+              <span>Line 15 – Taxable Income</span>
+              <span>$0.00</span>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- STEP 5: CREDITS -->
+        <div class="form-step" data-step="5">
+          <fieldset>
+            <legend>Credits</legend>
+            <div class="warning-box">
+              ⚠️ Nonresident aliens on F-1, J-1, M-1, or Q visas do NOT qualify for the Earned Income Credit.
+            </div>
+            <div class="warning-box">
+              ⚠️ Nonresident aliens cannot claim the American Opportunity Credit or Lifetime Learning Credit.
+            </div>
+            <label for="qualifyingChild">Do you have a qualifying child or dependent?</label>
+            <select id="qualifyingChild" name="qualifyingChild">
+              <option value="">Select an option</option>
+              <option value="No dependents">No dependents</option>
+              <option value="Yes – U.S. citizen child">Yes – U.S. citizen child</option>
+              <option value="Yes – child who is not a U.S. citizen">Yes – child who is not a U.S. citizen</option>
             </select>
+            <p class="hint">Nonresident aliens can only claim the Child Tax Credit if their dependent is a U.S. citizen, U.S. national, or U.S. resident alien.</p>
+            <label for="childTaxCredit">Child Tax Credit</label>
+            <input type="number" id="childTaxCredit" name="childTaxCredit" min="0" step="0.01" placeholder="0.00" />
+            <p class="hint">Nonresident aliens may only claim the Child Tax Credit if the child is a U.S. citizen, national, or resident.</p>
+          </fieldset>
+        </div>
 
-            <label for="zip">ZIP</label>
-            <input type="text" id="zip" name="zip" placeholder="12345" pattern="[0-9]{5}" inputmode="numeric" required />
+        <!-- STEP 6: PAYMENTS -->
+        <div class="form-step" data-step="6">
+          <fieldset>
+            <legend>Payments</legend>
+            <div class="tax-grid">
+              <label for="line25a" class="required-label">Line 25a: Federal income tax withheld from W-2</label>
+              <input type="number" id="line25a" name="line25a" min="0" step="0.01" placeholder="0.00" required />
 
-            <label for="country" class="required-label">Country</label>
-            <select id="country" name="country" required>
-              <option value="">Select a country (if applicable)</option>
-              <option value="United States">United States</option>
-              <option value="China">China</option>
-              <option value="India">India</option>
-              <option value="South Korea">South Korea</option>
-              <option value="Nigeria">Nigeria</option>
-              <option value="Ghana">Ghana</option>
-              <option value="Jamaica">Jamaica</option>
-              <option value="Canada">Canada</option>
-              <option value="Mexico">Mexico</option>
-              <option value="Brazil">Brazil</option>
-              <option value="United Kingdom">United Kingdom</option>
-              <option value="Germany">Germany</option>
-              <option value="France">France</option>
-              <option value="Japan">Japan</option>
-              <option value="Philippines">Philippines</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Bangladesh">Bangladesh</option>
-              <option value="Nepal">Nepal</option>
-              <option value="Sri Lanka">Sri Lanka</option>
-              <option value="Ethiopia">Ethiopia</option>
-              <option value="Kenya">Kenya</option>
-              <option value="Other (please specify)">Other (please specify)</option>
-            </select>
-            <p class="hint">Select your home country. This helps determine if a U.S. tax treaty applies to you.</p>
+              <label for="line25b">Line 25b: Federal income tax withheld from 1099</label>
+              <input type="number" id="line25b" name="line25b" min="0" step="0.01" placeholder="0.00" />
 
-            <label for="visaType" class="required-label">Visa Type</label>
-            <select id="visaType" name="visaType" required>
-              <option value="">Select visa type</option>
-              <option value="F-1">F-1 (Student)</option>
-              <option value="J-1">J-1 (Exchange Visitor)</option>
-              <option value="H-1B">H-1B (Specialty Occupation)</option>
-              <option value="H-4">H-4 (Dependent of H-1B)</option>
-              <option value="O-1">O-1 (Extraordinary Ability)</option>
-              <option value="L-1">L-1 (Intracompany Transfer)</option>
-              <option value="TN">TN (NAFTA/USMCA)</option>
-              <option value="Green Card / Permanent Resident">Green Card / Permanent Resident</option>
-              <option value="U.S. Citizen">U.S. Citizen</option>
-              <option value="Other">Other</option>
-            </select>
-            <p class="hint">Your visa type determines which tax form you file and which credits you qualify for.</p>
-          </div>
-          <div class="form-options">
-            <label><input type="radio" name="filingStatus" value="Single" checked /> Single</label>
-            <label><input type="radio" name="filingStatus" value="Married filing separately" /> Married filing separately</label>
-            <label><input type="radio" name="filingStatus" value="Qualifying surviving spouse" /> Qualifying surviving spouse</label>
-            <label><input type="radio" name="filingStatus" value="Estate or Trust" /> Estate or Trust</label>
-          </div>
-          <p class="hint">Nonresident aliens cannot file as Head of Household or Married Filing Jointly unless specific treaty conditions apply.</p>
-        </fieldset>
+              <label for="line25g">Line 25g: Tax withheld from Form 1042-S</label>
+              <input type="number" id="line25g" name="line25g" min="0" step="0.01" placeholder="0.00" />
+              <p class="hint">International students may receive a 1042-S for scholarship or fellowship income.</p>
+              <details class="field-help">
+                <summary>What is a Form 1042-S?</summary>
+                <p>Form 1042-S is sent to nonresident aliens who 
+                   received U.S.-source income like scholarships, 
+                   fellowships, or income covered by a tax treaty. 
+                   Your university may send you one if any of 
+                   your scholarship income was taxable or covered 
+                   by a treaty exemption.</p>
+              </details>
 
-        <fieldset>
-          <legend>Income Effectively Connected with U.S. Trade or Business</legend>
-          <div class="tax-grid">
-            <label for="line1a" class="required-label">Line 1a: Total wages from Form W-2, box 1</label>
-            <input type="number" id="line1a" name="line1a" min="0" step="0.01" placeholder="0.00" required />
+              <label for="line26">Line 26: Estimated tax payments</label>
+              <input type="number" id="line26" name="line26" min="0" step="0.01" placeholder="0.00" />
+            </div>
+            <div class="read-only-field">
+              <span>Line 33 – Total Payments</span>
+              <span>$0.00</span>
+            </div>
 
-            <label for="line1k">Line 1k: Income exempt by tax treaty – enter 0 if none</label>
-            <input type="number" id="line1k" name="line1k" min="0" step="0.01" placeholder="0.00" />
-            <p class="hint">F-1 and J-1 students from certain countries may qualify for a treaty exemption. Check IRS Publication 901.</p>
+            <div class="milestone">
+              <span class="milestone-icon">🎯</span>
+              <div>
+                <strong>You're almost done!</strong>
+                <p>Review your entries above, then click 
+                   below to see your estimated refund 
+                   or amount owed.</p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
-            <label for="line2b">Line 2b: Taxable interest from 1099-INT</label>
-            <input type="number" id="line2b" name="line2b" min="0" step="0.01" placeholder="0.00" />
+        <!-- STEP NAVIGATION -->
+        <div class="step-navigation">
+          <label for="step1" class="nav-button nav-prev">← Previous</label>
+          <label for="step6" class="nav-button nav-next">Next →</label>
+        </div>
 
-            <label for="line3a">Line 3a: Qualified dividends from 1099-DIV</label>
-            <input type="number" id="line3a" name="line3a" min="0" step="0.01" placeholder="0.00" />
-
-            <label for="line3b">Line 3b: Ordinary dividends from 1099-DIV</label>
-            <input type="number" id="line3b" name="line3b" min="0" step="0.01" placeholder="0.00" />
-
-            <label for="line7a">Line 7a: Capital gain or loss from 1099-B</label>
-            <input type="number" id="line7a" name="line7a" step="0.01" placeholder="0.00" />
-            <p class="hint">Enter gain or loss from stock sales. Your 1099-B shows proceeds and cost basis.</p>
-
-            <label for="line8">Line 8: Other income</label>
-            <input type="number" id="line8" name="line8" min="0" step="0.01" placeholder="0.00" />
-          </div>
-          <div class="read-only-field">
-            <span>Line 9 – Total Effectively Connected Income</span>
-            <span>$0.00</span>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Deductions</legend>
-          <div class="warning-box">
-            Important: Nonresident aliens generally CANNOT claim the standard deduction. You must itemize deductions on Schedule A (Form 1040-NR). Exception: Students from India may claim the standard deduction under the U.S.-India tax treaty.
-          </div>
-          <div class="tax-grid">
-            <label for="itemizedDeductions">Total itemized deductions</label>
-            <input type="number" id="itemizedDeductions" name="itemizedDeductions" min="0" step="0.01" placeholder="0.00" />
-
-            <label for="qbiDeduction">Qualified business income deduction</label>
-            <input type="number" id="qbiDeduction" name="qbiDeduction" min="0" step="0.01" placeholder="0.00" />
-          </div>
-          <div class="read-only-field">
-            <span>Line 15 – Taxable Income</span>
-            <span>$0.00</span>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Credits</legend>
-          <div class="warning-box">
-            ⚠️ Nonresident aliens on F-1, J-1, M-1, or Q visas do NOT qualify for the Earned Income Credit.
-          </div>
-          <div class="warning-box">
-            ⚠️ Nonresident aliens cannot claim the American Opportunity Credit or Lifetime Learning Credit.
-          </div>
-          <label for="qualifyingChild">Do you have a qualifying child or dependent?</label>
-          <select id="qualifyingChild" name="qualifyingChild">
-            <option value="">Select an option</option>
-            <option value="No dependents">No dependents</option>
-            <option value="Yes – U.S. citizen child">Yes – U.S. citizen child</option>
-            <option value="Yes – child who is not a U.S. citizen">Yes – child who is not a U.S. citizen</option>
-          </select>
-          <p class="hint">Nonresident aliens can only claim the Child Tax Credit if their dependent is a U.S. citizen, U.S. national, or U.S. resident alien.</p>
-          <label for="childTaxCredit">Child Tax Credit</label>
-          <input type="number" id="childTaxCredit" name="childTaxCredit" min="0" step="0.01" placeholder="0.00" />
-          <p class="hint">Nonresident aliens may only claim the Child Tax Credit if the child is a U.S. citizen, national, or resident.</p>
-        </fieldset>
-
-        <fieldset>
-          <legend>Payments</legend>
-          <div class="tax-grid">
-            <label for="line25a" class="required-label">Line 25a: Federal income tax withheld from W-2</label>
-            <input type="number" id="line25a" name="line25a" min="0" step="0.01" placeholder="0.00" required />
-
-            <label for="line25b">Line 25b: Federal income tax withheld from 1099</label>
-            <input type="number" id="line25b" name="line25b" min="0" step="0.01" placeholder="0.00" />
-
-            <label for="line25g">Line 25g: Tax withheld from Form 1042-S</label>
-            <input type="number" id="line25g" name="line25g" min="0" step="0.01" placeholder="0.00" />
-            <p class="hint">International students may receive a 1042-S for scholarship or fellowship income.</p>
-
-            <label for="line26">Line 26: Estimated tax payments</label>
-            <input type="number" id="line26" name="line26" min="0" step="0.01" placeholder="0.00" />
-          </div>
-          <div class="read-only-field">
-            <span>Line 33 – Total Payments</span>
-            <span>$0.00</span>
-          </div>
-        </fieldset>
-
-        <fieldset>
+        <!-- RESULTS (always visible) -->
+        <fieldset class="form-step-always-visible">
           <legend>Your Results</legend>
           <div class="read-only-grid">
             <div class="read-only-field">
