@@ -49,6 +49,9 @@ main {
 section {
   padding: 2rem 0;
 }
+section section {
+  padding: 0.5rem 0;
+}
 
 /* Spacing utilities */
 .space-top {
@@ -466,10 +469,7 @@ button {
 }
 
 .step-navigation {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 2rem 0;
+  display: none;
 }
 
 /* Highlight active and completed steps */
@@ -618,6 +618,16 @@ button {
   font-size: 0.8rem;
   color: var(--muted);
   opacity: 0.9;
+}
+
+caption {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--light-blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 0 0 0.75rem 0;
 }
 
 /* ===== EXPANDABLE HELP FIELDS ===== */
@@ -852,9 +862,18 @@ button {
 
 .resource-card h2 {
   color: var(--primary);
-  font-size: 1.2rem;
-  margin: 1rem 1rem 0.4rem;
+  font-size: 1.4rem;
+  margin: 1rem 1rem 0.5rem;
   font-weight: 700;
+}
+
+.resource-card h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin: 1.25rem 1rem 0.5rem;
+  font-weight: 800;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--light-blue);
 }
 
 .resource-card p {
@@ -867,6 +886,9 @@ button {
   display: block;
 }
 
+.resource-card li a {
+  display:inline;
+}
 .photo-card {
   width: 100%;
   height: 220px;
